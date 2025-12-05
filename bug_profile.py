@@ -6,13 +6,13 @@ from rubpy import Client
 async def main():
     try:
         async with Client("rubpy") as bot:
-            profile = "photo.jpg" #عکس اصلی 
-            thumb = "photo1.jpg" # عکس بیرون  
+            profile = "photo.jpg" # عکس اصلی
+            thumb = "photo2.jpg" # عکس بیرون
 
             if not os.path.isfile(profile):
-                raise FileNotFoundError(f"فایل {profile} یافت نشد.")
+                raise FileNotFoundError(f"فایل پروفایل {profile} یافت نشد.")
             if not os.path.isfile(thumb):
-                raise FileNotFoundError(f"فایل {thumb} یافت نشد.")
+                raise FileNotFoundError(f"فایل تامبنیل {thumb} یافت نشد.")
 
             thumb_id = (await bot.upload(thumb)).file_id
 
